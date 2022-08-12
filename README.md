@@ -26,8 +26,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [https://www.frontendmentor.io/solutions](https://www.frontendmentor.io/solutions/responsive-stats-preview-card-component-using-css-flexbox-796PoFJ2ES)
+- Live Site URL: [https://frontendmentor-task6-daironcanel.netlify.app/](https://frontendmentor-task6-daironcanel.netlify.app/)
 
 ## My process
 
