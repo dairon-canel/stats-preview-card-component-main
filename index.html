@@ -32,10 +32,15 @@
       box-sizing: border-box;
       margin: 0;
       padding: 0;
+    }
+
+    body {
       background-color: var(--very-dark-blue-main-background);
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
+      height: 100vh;
     }
 
     h1, h2 {
@@ -44,16 +49,172 @@
 
     h3, p {
       font-family: 'Lexend Deca', sans-serif;
+      
     }
 
-    .attribution { font-size: 11px; text-align: center; }
+    .card {
+      margin: 20px;
+      display: flex;
+      background-color: var(--dark-desaturated-blue-card-background);
+      max-width: 1080px;
+      max-height: 446px;
+      overflow: hidden;
+      border-radius: 8px;
+    }
+
+    .info__section {
+      margin: 40px;
+    }
+
+    .info__section-title {
+      color: var(--white-main-heading-stats);
+      font-size: 2.4rem;
+      margin-bottom: 2rem;
+    }
+
+    .info__section-title-span {
+      color: var(--soft-violet-accent);
+    }
+
+    .info__section-description {
+      color: var(--slightly-transparent-white-main-paragraph);
+      max-width: 25rem;
+      line-height: 1.7rem;
+      margin-bottom: 6rem;
+    }
+
+    .info__section-state {
+      display: flex;
+      max-width: 25rem;
+      justify-content: space-between;
+    }
+    
+    .number {
+      color: var(--white-main-heading-stats);
+    }
+
+    .subtitle {
+      color: var(--slightly-transparent-white-stat-headings);
+      font-size: .9rem;
+      letter-spacing: .1rem;
+      text-transform: uppercase;
+    }
+
+    .image__section {
+      position: relative;
+    }
+
+    .image__section::after {
+      content: "";
+      position: absolute;
+      width: 540px;
+      height: 446px;
+      background-color: var(--soft-violet-accent);
+      opacity: 0.5;
+      left: 0;
+    }
+
+    .image__mobile{
+      display: none;
+    }
+
+    .attribution { 
+      color: var(--white-main-heading-stats);
+      font-size: 11px; 
+      text-align: center; 
+      position: fixed;
+      bottom: 0;
+    }
     .attribution a { color: hsl(228, 45%, 44%); }
+    
+    @media screen and (max-width: 980px) {
+      body {
+        height: 130vh;
+      }
+
+      .card{
+        margin: 15px;
+        flex-direction: column;
+        flex-flow: column-reverse;
+        align-items: center;
+        max-width: 375px;
+        max-height: 1000px;
+      }
+      
+      .image__desktop {
+        display: none;
+      }
+
+      .image__mobile {
+        display: block;
+      }
+
+      .image__section {
+        width: 375px;
+        height: 275px;
+      }
+
+      .image__section::after {
+        top:0;
+        width: 375px;
+        height: 275px;
+      }
+
+      .info__section {
+        width: 270px;
+      }
+
+      .info__section-title {
+        color: var(--white-main-heading-stats);
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+      }
+
+      .info__section-description {
+        max-width: 280px;
+        font-size: 1rem;
+      }
+
+      .info__section-state {
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        height: 12rem;
+      }
+
+      .companies {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .templates {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .templates {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .info__section-title {
+        text-align: center;
+      }
+
+      .info__section-description {
+        margin-bottom: 1rem;
+        text-align: center;
+      }
+    }
   </style>
 </head>
 <body>
   <main class="card">
     <article class="info__section">
-      <h1 class="info__section-title">Get insights that help your business grow.</h1>
+      <h1 class="info__section-title">Get <span class="info__section-title-span">insights</span> that help your business grow.</h1>
       <p class="info__section-description">Discover the benefits of data analytics and make better decisions regarding revenue, customer 
   experience, and overall efficiency.</p>
       <div class="info__section-state">
@@ -66,13 +227,14 @@
           <h3 class="subtitle">templates</h3>
         </div>
         <div class="queries">
-          <h2 class="number">12m+</h2>
+          <h2 class="number">12M+</h2>
           <h3 class="subtitle">queries</h3>
         </div>
       </div>
     </article>
     <aside class="image__section">
-      <img src="./images/image-header-desktop.jpg" alt="header">
+      <img src="./images/image-header-desktop.jpg" class="image__desktop" alt="headerDesktop" width="540" height="446">
+      <img src="./images/image-header-mobile.jpg" class="image__mobile" alt="headerMobile" width="375" height="275">
     </aside>
   </main>
   <footer class="attribution">
